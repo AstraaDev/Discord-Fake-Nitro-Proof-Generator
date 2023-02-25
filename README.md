@@ -3,14 +3,11 @@
   <a href="https://www.python.org">
     <img src="https://img.shields.io/badge/Python-3.9-informational.svg">
   </a>
-  <a href="https://github.com/AstraaDev/Discord-GroupLocker">
+  <a href="https://github.com/AstraaDev/Discord-Fake-Nitro-Proof-Generator">
     <img src="https://img.shields.io/badge/covarage-90%25-green">
   </a>
   <a href="https://github.com/AstraaDev">
-    <img src="https://img.shields.io/github/repo-size/AstraaDev/Discord-GroupLocker.svg?label=Repo%20size&style=flat-square">
-  </a>
-  <a href="https://github.com/AstraaDev">
-    <img src="https://gpvc.arturio.dev/AstraaDev">
+    <img src="https://img.shields.io/github/repo-size/AstraaDev/Discord-Fake-Nitro-Proof-Generator.svg?label=Repo%20size&style=flat-square">
   </a>
     <p align="center"> <a href="https://twitter.com/astraadev" target="blank">
     <img src="https://img.shields.io/twitter/follow/astraadev?logo=twitter&style=for-the-badge" alt="astraadev"/></a>
