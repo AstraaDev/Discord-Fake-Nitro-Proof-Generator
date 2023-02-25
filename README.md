@@ -34,8 +34,8 @@ By using this Tool, you agree that you hold responsibility and accountability of
 
 ## Features
 
-- [x] - [Lock joins](https://github.com/AstraaDev/Discord-GroupLocker) - Automatically kick the person if they join the group.
-- [x] - [Lock leaves](https://github.com/moom825/Discord-GroupLocker) - Automatically re-adds the person if they leave the group.
+- [x] - [Gen Proof from user's ID](https://github.com/AstraaDev/Discord-Fake-Nitro-Proof-Generator) - Create a proof from an existing user ID.
+- [x] - [Manually Gen Proof](https://github.com/AstraaDev/Discord-Fake-Nitro-Proof-Generator) - Create a proof manually by choosing the user's name and profile picture.
 
 ## How To Setup/Install
 
