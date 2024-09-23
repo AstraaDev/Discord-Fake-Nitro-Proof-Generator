@@ -157,9 +157,9 @@ class NitroProofId(discord.ui.Modal, title='Fake Nitro Proof System'):
     async def on_submit(self, interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
         try:
-            self.user = client.get_user(int(self.receiverid.value))
-            self.author_avatar = interaction.user.avatar.url if interaction.user.avatar else config["default_avatar"]
-            self.receiver_avatar = self.user.avatar.url if self.user.avatar else config["default_avatar"]
+            self.user = await client.fetch_user(int(self.receiverid.value))
+            self.author_avatar = interaction.user.display_avatar.url if interaction.user.avatar else config["default_avatar"]
+            self.receiver_avatar = self.user.display_avatar.url if self.user.avatar else config["default_avatar"]
             proof = BoostPage(self.nitrotype.value, interaction.user.name, self.author_avatar, self.authortext.value, self.receiver_avatar, self.user.name, self.receivertext.value).get_proof()
             image = hti.screenshot(html_str=proof, size=(random.randint(730, 1000), random.randint(320, 340)), save_as='proof.png')
             
