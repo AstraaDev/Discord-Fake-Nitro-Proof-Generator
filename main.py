@@ -163,7 +163,7 @@ class NitroProofId(discord.ui.Modal, title='Fake Nitro Proof System'):
         style=discord.TextStyle.short,
         placeholder='Example: 464457105521508354',
         required=True,
-        max_length=18,
+        max_length=25,
     )
 
     receivertext = discord.ui.TextInput(
