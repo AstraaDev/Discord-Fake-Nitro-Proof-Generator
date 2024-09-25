@@ -25,20 +25,39 @@ class BoostPage:
         self.receivertext = receivertext
         self.receiver_message_datetime = self.actual_datetime + datetime.timedelta(minutes=random.randint(0, 2))
         self.receiver_message_datetime = self.receiver_message_datetime.strftime('Today at %I:%M %p')
-
+    
     def get_proof(self):
         filename = ""
+        nitro_image = ""
+        
         if self.nitro_type == "boost":
             filename = "assets/boost_page.txt"
+            nitro_image = f"{current_directory}/assets/nitro_boost_preset.png"
         elif self.nitro_type == "classic":
             filename = "assets/classic_page.txt"
+            nitro_image = f"{current_directory}/assets/nitro_classic_preset.png"
         elif self.nitro_type == "promo":
             filename = "assets/promo_page.txt"
+            nitro_image = f"{current_directory}/assets/nitro_promo_preset.png"
         else:
             filename = "assets/boost_page.txt"
-        
+            nitro_image = f"{current_directory}/assets/nitro_boost_preset.png"
+
         with open(filename, 'r') as boost_page:
-            self.proof = boost_page.read().replace('WHITNEYFONT', f"{current_directory}/assets/Whitneyfont.woff").replace('WHITNEYMEDIUM', f"{current_directory}/assets/Whitneymedium.woff").replace('AUTHORNAME', self.authorname).replace('AUTHORAVATAR', self.authoravatar).replace('AUTHORDATETIME', self.sender_message_datetime).replace('AUTHORTEXT', self.authortext).replace('USERNAME', self.receivername).replace('USERAVATAR', self.receiveravatar).replace('USERDATETIME', self.receiver_message_datetime).replace('USERTEXT', self.receivertext).replace('NITROCODE', ''.join(random.choice('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') for i in range(16)))
+            self.proof = boost_page.read() \
+                .replace('WHITNEYFONT', f"{current_directory}/assets/Whitneyfont.woff") \
+                .replace('WHITNEYMEDIUM', f"{current_directory}/assets/Whitneymedium.woff") \
+                .replace('AUTHORNAME', self.authorname) \
+                .replace('AUTHORAVATAR', self.authoravatar) \
+                .replace('AUTHORDATETIME', self.sender_message_datetime) \
+                .replace('AUTHORTEXT', self.authortext) \
+                .replace('USERNAME', self.receivername) \
+                .replace('USERAVATAR', self.receiveravatar) \
+                .replace('USERDATETIME', self.receiver_message_datetime) \
+                .replace('USERTEXT', self.receivertext) \
+                .replace('NITROCODE', ''.join(random.choice('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') for i in range(16))) \
+                .replace('NITROIMAGESRC', nitro_image)
+
         return self.proof
 
 class MyClient(discord.Client):
