@@ -17,13 +17,13 @@ class BoostPage:
         self.authorname = authorname
         self.authoravatar = authoravatar
         self.authortext = authortext
-        self.sender_message_datetime = self.actual_datetime - datetime.timedelta(minutes=random.randint(0, 2))
+        self.sender_message_datetime = self.actual_datetime - datetime.timedelta(minutes=random.randint(1, 300))
         self.sender_message_datetime = self.sender_message_datetime.strftime('Today at %I:%M %p')
 
         self.receivername = receivername
         self.receiveravatar = receiveravatar
         self.receivertext = receivertext
-        self.receiver_message_datetime = self.actual_datetime + datetime.timedelta(minutes=random.randint(0, 2))
+        self.receiver_message_datetime = self.actual_datetime + datetime.timedelta(minutes=random.randint(1, 120))
         self.receiver_message_datetime = self.receiver_message_datetime.strftime('Today at %I:%M %p')
     
     def get_proof(self):
@@ -131,7 +131,7 @@ class NitroProofCustom(discord.ui.Modal, title='Fake Nitro Proof System'):
             self.receiveravatar_value = config["default_avatar"]
         else:
             self.receiveravatar_value = self.receiveravatar.value
-        proof = BoostPage(self.nitrotype.value, interaction.user.name, interaction.user.avatar.url, self.authortext.value, self.receiveravatar_value, self.receivername.value, self.receivertext.value).get_proof()
+        proof = BoostPage(self.nitrotype.value, interaction.user.display_name, interaction.user.avatar.url, self.authortext.value, self.receiveravatar_value, self.receivername.value, self.receivertext.value).get_proof()
         image = hti.screenshot(html_str=proof, size=(random.randint(730, 1000), random.randint(320, 340)), save_as='proof.png')
         
         await interaction.followup.send(f"Proof generated! Check your DMs.", ephemeral=True)
